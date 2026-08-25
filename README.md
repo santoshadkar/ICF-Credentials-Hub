@@ -36,6 +36,25 @@ The **ICF Credentials Hub** serves as a single-source digital platform providing
 
 ---
 
+## 🌐 Vercel Deployment Troubleshooting (Fixing 404)
+
+If `https://icf-credentials-hub.vercel.app/` shows a 404 error on Vercel:
+
+1. **Trigger Manual Redeploy on Vercel**:
+   - Go to [https://vercel.com/dashboard](https://vercel.com/dashboard).
+   - Click on your project **`icf-credentials-hub`**.
+   - Navigate to **Deployments** -> Click the **`...`** (three dots) icon next to the latest commit -> Click **Redeploy**.
+
+2. **Verify Project Settings**:
+   - Under **Settings** -> **General**:
+     - **Framework Preset**: Select **`Other`**
+     - **Root Directory**: Leave blank (or `./`)
+     - **Build Command**: Leave blank
+     - **Output Directory**: Leave blank
+   - Click **Save** and **Redeploy**.
+
+---
+
 ## 🛠️ Technology Stack
 
 - **Frontend Architecture**: HTML5, Vanilla CSS3 (Dark Glassmorphism UI, Responsive Grid Layout system), Vanilla JavaScript (ES6+).
@@ -76,6 +95,8 @@ The **ICF Credentials Hub** serves as a single-source digital platform providing
 ICF-Credentials-Hub/
 ├── index.html              # Main Single-Page Application (4 Responsive Hubs)
 ├── server.js                # Zero-dependency Node.js HTTP Web Server (Port 3000)
+├── vercel.json             # Vercel v2 Static SPA Routing Configuration
+├── package.json            # Node.js Package Manifest & Start Script
 ├── css/
 │   └── styles.css          # Glassmorphism Design System & Responsive Layouts
 ├── js/
